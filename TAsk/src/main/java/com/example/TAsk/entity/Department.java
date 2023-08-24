@@ -1,11 +1,8 @@
 package com.example.TAsk.entity;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
@@ -17,7 +14,6 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long dept_id;
-
     public String dept_name;
 
     @OneToMany(cascade = CascadeType.ALL)
