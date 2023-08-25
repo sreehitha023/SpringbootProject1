@@ -1,14 +1,15 @@
-package com.example.TAsk.service;
+package com.example.TAsk.service.impl;
 
 import com.example.TAsk.entity.Projects;
 import com.example.TAsk.repository.ProjectRepository;
+import com.example.TAsk.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProjectsService {
+public class ProjectsServiceImpl implements ProjectService {
     @Autowired
     ProjectRepository projectRepository;
 
