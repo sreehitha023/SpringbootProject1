@@ -7,5 +7,5 @@ import java.util.List;
 public interface DepartmentService {
     Department save(Department department);
     List<Department> get();
-    void delete(Long dept_id);
+    void delete(Long deptId);
 }

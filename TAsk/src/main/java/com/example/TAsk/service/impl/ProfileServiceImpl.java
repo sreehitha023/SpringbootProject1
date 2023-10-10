@@ -21,7 +21,7 @@ public class ProfileServiceImpl implements ProfileService {
         return profileRepository.findAll();
     }
 
-    public void delete(Long profile_id){
-        profileRepository.deleteById(profile_id);
+    public void delete(Long profileId){
+        profileRepository.deleteById(profileId);
     }
 }

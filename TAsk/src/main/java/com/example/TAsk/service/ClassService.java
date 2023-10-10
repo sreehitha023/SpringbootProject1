@@ -7,6 +7,6 @@ import java.util.List;
 public interface ClassService {
     Class save(Class eclass);
     List<Class> get();
-    void delete(Long class_id);
+    void delete(Long classId);
 
 }

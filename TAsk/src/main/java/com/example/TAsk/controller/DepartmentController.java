@@ -3,8 +3,8 @@ package com.example.TAsk.controller;
 import com.example.TAsk.entity.Department;
 
 import com.example.TAsk.service.impl.DepartmentServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/department")
 public class DepartmentController {
-    public static final Logger logger = LoggerFactory.getLogger(ClassController.class);
+    public static final Logger logger= LogManager.getLogger(ClassController.class);
     @Autowired
     DepartmentServiceImpl departmentServiceImpl;
 
@@ -30,8 +30,8 @@ public class DepartmentController {
     }
 
     @DeleteMapping
-    public void delete(@PathVariable Long dept_id){
+    public void delete(@PathVariable Long deptId){
         logger.info("Deleted");
-        departmentServiceImpl.delete(dept_id);
+        departmentServiceImpl.delete(deptId);
     }
 }

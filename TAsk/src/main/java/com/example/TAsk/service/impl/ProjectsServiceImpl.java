@@ -21,7 +21,7 @@ public class ProjectsServiceImpl implements ProjectService {
         return projectRepository.findAll();
     }
 
-    public void delete(Long project_id){
-        projectRepository.deleteById(project_id);
+    public void delete(Long projectId){
+        projectRepository.deleteById(projectId);
     }
 }

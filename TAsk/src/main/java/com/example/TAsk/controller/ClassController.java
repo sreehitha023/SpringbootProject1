@@ -2,8 +2,8 @@ package com.example.TAsk.controller;
 
 import com.example.TAsk.entity.Class;
 import com.example.TAsk.service.impl.ClassServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/class")
 public class ClassController {
-    public static final Logger logger = LoggerFactory.getLogger(ClassController.class);
+    public static final Logger logger = LogManager.getLogger(ClassController.class);
     @Autowired
     ClassServiceImpl classServiceImpl;
 
@@ -29,8 +29,8 @@ public class ClassController {
     }
 
     @DeleteMapping
-    public void delete(@PathVariable Long class_id){
+    public void delete(@PathVariable Long classId){
         logger.info("Deleted Successfully");
-        classServiceImpl.delete(class_id);
+        classServiceImpl.delete(classId);
     }
 }

@@ -8,13 +8,13 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "department_db")
+@Table(name = "Department")
 @Entity
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long dept_id;
-    public String dept_name;
+    public Long deptId;
+    public String deptName;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "dept_id",referencedColumnName = "dept_id")

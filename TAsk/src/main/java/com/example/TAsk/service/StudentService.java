@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface StudentService {
     Student save(Student student);
     List<Student> get ();
-    Optional<Student> get(Long student_id);
-    void delete (Long student_id);
-    Student update(Long student_id , Student updatedStudent);
+    Optional<Student> get(Long studentId);
+    void delete (Long studentId);
+    Student update(Long studentId , Student updatedStudent);
 }

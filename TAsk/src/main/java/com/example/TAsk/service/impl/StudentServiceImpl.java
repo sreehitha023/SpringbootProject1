@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService {
 
     public Student save(Student student)
     {
-        if (student.getStudent_name() == null || student.getStudent_name().isEmpty()) {
+        if (student.getStudentName() == null || student.getStudentName().isEmpty()) {
             throw new InvalidRequestException("Student name cannot be empty");
 
         } else {
@@ -37,28 +37,28 @@ public class StudentServiceImpl implements StudentService {
         }
 
         @Override
-        @Cacheable(cacheNames = "student",key = "#student_id")
-        public Optional<Student> get(Long student_id)
+        @Cacheable(cacheNames = "student",key = "#studentId")
+        public Optional<Student> get(Long studentId)
         {
-        return studentRepository.findById(student_id);
+        return studentRepository.findById(studentId);
         }
        @Override
-       @CacheEvict(cacheNames = "student" , key = "#student_id")
-       public void delete (Long student_id)
+       @CacheEvict(cacheNames = "student" , key = "#studentId")
+       public void delete (Long studentId)
         {
-            studentRepository.deleteById(student_id);
+            studentRepository.deleteById(studentId);
         }
 
 
     @Override
-    @CachePut(cacheNames = "student", key = "#student_id + '_' + #updatedStudent")
-    public Student update(Long student_id , Student updatedStudent)
+    @CachePut(cacheNames = "student", key = "#studentId + '_' + #updatedStudent")
+    public Student update(Long studentId , Student updatedStudent)
     {
-        Optional<Student> optionalStudent = studentRepository.findById(student_id);
+        Optional<Student> optionalStudent = studentRepository.findById(studentId);
         if (optionalStudent.isPresent()) {
             Student student= optionalStudent.get();
-            student.setStudent_name(updatedStudent.getStudent_name());
-            student.setStudent_rollNumber(updatedStudent.getStudent_rollNumber());
+            student.setStudentName(updatedStudent.getStudentName());
+            student.setStudentRollNumber(updatedStudent.getStudentRollNumber());
             return studentRepository.save(student);
         }
         return null;

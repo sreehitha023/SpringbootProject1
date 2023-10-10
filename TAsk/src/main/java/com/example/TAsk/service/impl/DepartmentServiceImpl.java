@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findAll();
     }
 
-    public void delete(Long dept_id){
-        departmentRepository.deleteById(dept_id);
+    public void delete(Long deptId){
+        departmentRepository.deleteById(deptId);
     }
 }

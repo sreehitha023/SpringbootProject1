@@ -12,16 +12,16 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "student_db")
+@Table(name = "Student")
 @Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long student_id;
+    public Long studentId;
     @NotBlank
-    public String student_name;
+    public String studentName;
     @NotNull(message = "should not be null")
-    public String student_rollNumber;
+    public String studentRollNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")

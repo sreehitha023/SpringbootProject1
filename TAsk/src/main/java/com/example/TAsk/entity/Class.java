@@ -8,7 +8,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "class_db")
+@Table(name = "Class")
 @Entity
 public class Class
 {

@@ -8,13 +8,13 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "profile_db")
+@Table(name = "Profile")
 @Entity
 public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long profile_id;
-    public String profile_name;
+    public Long profileId;
+    public String profileName;
 
     @OneToOne(mappedBy = "profile")
     private Student student;
